@@ -36,5 +36,8 @@ int main(){
     std::cout<<"Image width: "<<image[0].size()<<std::endl;
     convertVecToImage(image,"random.ppm");
 
+    //convert random.ppm -scale 500x random.png
+    //eog random.png
+
     return 0;
 }
