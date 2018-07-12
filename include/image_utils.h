@@ -15,7 +15,7 @@ void convertVecToImage(std::vector<std::vector<int>> vector_image, std::string f
 
     if (!image_file.is_open()) { std::cout<<"FUCK"; }
 
-    image_file << "P6\n";// P6 filetype
+    image_file << "P3\n";// P6 filetype
     image_file << width << " " << height << std::endl;
     image_file << "255" << std::endl;
     //fprintf(image_file,"%d %d\n",width,height); // dimensions
