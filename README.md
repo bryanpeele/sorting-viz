@@ -2,21 +2,24 @@
 
 ## build
 
-mkdir build
-cd build
-cmake ..
-make
+`mkdir build`
+
+`cd build`
+
+`cmake ..`
+
+`make`
 
 ## run
 
-./sample
+`./sample`
 
-generates random.ppm
+`generates random.ppm`
 
-## convert to png
+## convert to png with imagemagick
 
-convert random.ppm -scale 500x random.png
+`convert random.ppm -scale 500x random.png`
 
-## view from terminal
+## view from terminal with eye of gnome
 
-eog random.png
+`eog random.png`
