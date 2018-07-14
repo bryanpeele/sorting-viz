@@ -2,8 +2,9 @@
 #include <iostream>
 #include <vector>
 
-#include "../include/sort_utils.h"
-#include "../include/image_utils.h"
+#include "sort_utils.h"
+#include "image_utils.h"
+#include "bubble.h"
 
 
 std::ostream &operator<<(std::ostream &os, const std::vector<int> &vector) {
@@ -36,6 +37,24 @@ int main(){
     std::cout<<"Image width: "<<image[0].size()<<std::endl;
     convertVecToImage(image,"random.ppm");
 
+    std::vector<int> test_sequence = generateOrderedSequence(length);
+    std::cout<<"Test sequence: "<<test_sequence<<std::endl;
+
+    bubbleSort bubble;
+    bubble.swap(test_sequence,3);
+    std::cout<<"Test sequence, swap 3<->4: "<<test_sequence<<std::endl;
+
+    bubble.forwardPass(test_sequence);
+    std::cout<<"Test sequence, forward pass: "<<test_sequence<<std::endl;
+
+    std::cout<<std::endl;
+
+    std::vector<int> random_sequence = generateRandomSequence(100);
+    std::cout<<"Random sequence: "<<random_sequence<<std::endl;
+    BubbleResults results = bubble.sort(random_sequence);
+    std::cout<<"Sorted sequence: "<<random_sequence<<" after "<<results.total_swaps<<" swaps"<<std::endl;
+
+    convertVecToImage(results.sort_trajectory,"bubble.ppm");
     //convert random.ppm -scale 500x random.png
     //eog random.png
 
