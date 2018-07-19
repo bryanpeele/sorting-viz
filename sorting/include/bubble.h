@@ -19,9 +19,10 @@ public:
         while (index < (initial_sequence.size()-1)){
             if (initial_sequence[index]>initial_sequence[index+1]){
                 swap(initial_sequence, index);
-                sort_trajectory.push_back(initial_sequence);
+                //sort_trajectory.push_back(initial_sequence);
                 ++num_swaps;
             }
+            sort_trajectory.push_back(initial_sequence);
             ++index;
         }
         return num_swaps;
