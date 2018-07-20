@@ -9,8 +9,12 @@
 #include <set>
 
 
-void convertVecToImage(std::vector<std::vector<int>> vector_image, std::string filename);
+void convertVecToImage(std::vector<std::vector<int>> vector_image,
+                       std::string filename);
 
-void convertVecToImageRedStreaks(std::vector<std::vector<int>> vector_image, std::string filename);
+void convertVecToImageRedStreaks(std::vector<std::vector<int>> vector_image,
+                                 std::string filename);
 
-void convertVecToImageBlueStreaks(std::vector<std::vector<int>> vector_image, std::string filename, int color_threshold);
+void convertVecToImageBlueStreaks(std::vector<std::vector<int>> vector_image,
+                                  std::string filename,
+                                  int color_threshold);

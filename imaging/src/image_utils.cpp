@@ -1,6 +1,7 @@
 #include "image_utils.h"
 
-void convertVecToImage(std::vector<std::vector<int>> vector_image, std::string filename){
+void convertVecToImage(std::vector<std::vector<int>> vector_image,
+                       std::string filename){
     int height = vector_image.size();
     int width = vector_image[0].size();
     std::ofstream image_file;
@@ -18,14 +19,16 @@ void convertVecToImage(std::vector<std::vector<int>> vector_image, std::string f
     for (int h = 0; h < height; ++h){
         for (int w = 0; w < width; ++w){
             auto pixel_value = static_cast<int>(static_cast<float>(vector_image[h][w])/static_cast<float>(width)*255.f);
-            image_file << pixel_value << " " << pixel_value << " " << pixel_value << "    ";
+            image_file << pixel_value << " " << pixel_value << " "
+                       << pixel_value << "    ";
         }
         image_file << std::endl;
     }
     image_file.close();
 };
 
-void convertVecToImageRedStreaks(std::vector<std::vector<int>> vector_image, std::string filename){
+void convertVecToImageRedStreaks(std::vector<std::vector<int>> vector_image,
+                                 std::string filename){
     int height = vector_image.size();
     int width = vector_image[0].size();
     std::ofstream image_file;
@@ -48,7 +51,8 @@ void convertVecToImageRedStreaks(std::vector<std::vector<int>> vector_image, std
             if (vector_image[h][w] %5 == 0){
                 image_file << "255 0 0    ";
             } else {
-                image_file << pixel_value << " " << pixel_value << " " << pixel_value << "    ";
+                image_file << pixel_value << " " << pixel_value << " "
+                           << pixel_value << "    ";
             }
         }
         image_file << std::endl;
@@ -56,7 +60,9 @@ void convertVecToImageRedStreaks(std::vector<std::vector<int>> vector_image, std
     image_file.close();
 };
 
-void convertVecToImageBlueStreaks(std::vector<std::vector<int>> vector_image, std::string filename, int color_threshold){
+void convertVecToImageBlueStreaks(std::vector<std::vector<int>> vector_image,
+                                  std::string filename,
+                                  int color_threshold){
 
     int height = vector_image.size();
     int width = vector_image[0].size();
@@ -89,7 +95,8 @@ void convertVecToImageBlueStreaks(std::vector<std::vector<int>> vector_image, st
             if (it != streaks.end()){
                 image_file << "0 0 255    ";
             } else {
-                image_file << pixel_value << " " << pixel_value << " " << pixel_value << "    ";
+                image_file << pixel_value << " " << pixel_value << " " << pixel_value
+                           << "    ";
             }
         }
         image_file << std::endl;

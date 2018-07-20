@@ -1,6 +1,10 @@
 add_library( sorting
         include/bubble.h
         src/bubble.cpp
+        include/cocktail.h
+        src/cocktail.cpp
+        include/insertion.h
+        src/insertion.cpp
         include/sort_utils.h
         src/sort_utils.cpp
         )

@@ -1,3 +1,5 @@
+#pragma once
+
 struct BubbleResults{
     int total_swaps;
     std::vector<std::vector<int>> sort_trajectory;
